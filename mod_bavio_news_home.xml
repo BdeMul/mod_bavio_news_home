@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.8" client="site" method="upgrade">
+    <name>MOD_BAVIO_NEWS_HOME</name>
+    <creationDate>08-02-2021</creationDate>
+    <author>Rene Ouendag, Anton van der Lelie, Liron Bijlenga and Bjorn de Mul</author>
+    <authorEmail>info@bavio.nl</authorEmail>
+    <authorUrl>https://www.bavio.nl</authorUrl>
+    <copyright>Copyright (C) Bavio 2020</copyright>
+    <version>1.0.0</version>
+    <description>MOD_BAVIO_NEWS_HOME_DESCRIPTION</description>
+
+	<files>
+		<filename module="mod_bavio_news_home">mod_bavio_news_home.php</filename>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+		<filename>mod_bavio_news_home.xml</filename>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="sub_title" type="text" default="" label="MOD_BAVIO_NEWS_HOME_SUB_TITLE_LABEL" description="MOD_BAVIO_NEWS_HOME_SUB_TITLE_DESC" size="10" filter="raw"  />
+                <field name="title" type="text" default="" label="MOD_BAVIO_NEWS_HOME_TITLE_LABEL" description="MOD_BAVIO_NEWS_HOME_TITLE_DESC" size="10" filter="raw"  />
+                <field name="categories" type="category" extension="com_content" label="MOD_BAVIO_NEWS_HOME_CATEGORY_LABEL" description="MOD_BAVIO_NEWS_HOME_CATEGORY_DESC" multiple="true" />
+                <field name="sub-categories" type="radio" default="0" label="MOD_BAVIO_NEWS_HOME_SUB_CATEGORIES_LABEL" description="MOD_BAVIO_NEWS_HOME_SUB_CATEGORIES_DESC" class="btn-group btn-group-yesno">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="limit" type="list" default="6"  label="MOD_BAVIO_NEWS_HOME_LIMIT_LABEL" description="MOD_BAVIO_NEWS_HOME_LIMIT_">
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                  </field>
+                <field name="menu_item" type="menuitem" default="45" label="MOD_BAVIO_NEWS_HOME_MENU_ITEM_LABEL" description="MOD_BAVIO_NEWS_HOME_MENU_ITEM_DESC" >
+                    <option	value="">JDEFAULT</option>
+                </field>
+                <field name="read_more" type="text" default="Wilt u meer nieuws items lezen?" label="MOD_BAVIO_NEWS_HOME_READMORE_LABEL" description="MOD_BAVIO_NEWS_HOME_READMORE_DESC" size="10" />
+                <field name="url_text" type="text" default="Toon alle nieuws items" label="MOD_BAVIO_NEWS_HOME_URL_TEXT_LABEL" description="MOD_BAVIO_NEWS_HOME_URL_TEXT_DESC" size="10" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
