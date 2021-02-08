@@ -26,7 +26,7 @@ class ModBavioNewsHome
             ->from('#__content') 
             ->setLimit($limit)
             ->where('catid IN '. ModBavioNewsHome::quoteAndFormat($categories))
-            ->order($db->quoteName('created') . ' ASC');;
+            ->order($db->quoteName('created') . 'DESC');;
         // Prepare the query
         $db->setQuery($query);
         return $db->loadObjectList(); 
