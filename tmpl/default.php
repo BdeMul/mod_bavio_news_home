@@ -18,6 +18,10 @@ $categories = Categories::getInstance('content');
         <div class="row row-cols-lg-2 row-cols-1 max-mb-n30">
             <?php 
             foreach($articles as $article): 
+                $lang = array();
+                $lang['en'] = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+                $lang['nl'] = ['Jan','Feb','Mrt','Apr','Mei','Juni','Juli','Aug','Sep','Okt','Nov','Dec'];
+        
                 $creationDate = DateTime::createFromFormat('Y-m-d H:i:s', $article->created);
             ?>
             <div class="col max-mb-30" data-aos="fade-up">
@@ -37,7 +41,9 @@ $categories = Categories::getInstance('content');
                         <div class="right-box">
                             <div class="event-date">
                                 <div class="event-date-day"><?php echo($creationDate->format('j')) ?></div>
-                                <div class="event-date-month"><?php echo($creationDate->format('M')) ?></div>
+                                <div class="event-date-month">
+                                    <?php echo(ucfirst(str_replace($lang['en'], $lang['nl'], $creationDate->format('M')))) ?>
+                                </div>
                             </div>
                             <div class="event-button">
                                 <a class="btn btn-primary btn-hover-secondary btn-xs"
